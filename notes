@@ -1,0 +1,200 @@
+reveal.js
+
+Why FP matters
+or Midnight in the Garden of Good and Functional Programming
+========================================================
+
+Abstract
+--------
+In 1990 a smart man by the name of John Hughes wrote a paper called 'Why Functional Programming Matters'. 22 years later come and listen to a functional programming beginner  rehash the best parts of it. 
+
+I will show how nice functional programming techniques such as pure functions, higher-order functions and immutability can help us write better software in non-functional languages.
+
+Bio
+---
+
+Liam writes a lot of software - mostly for the web. When getting paid it is usually asp.net. When not getting paid he dabbles with CoffeeScript, node.js, ruby, linux and haskell. Not a true Scotsman.
+
+I don't know what I am doing
+---------
+
+I'm not an expert. I a beginner with a beginner's perspective that I thought some other people might relate to and enjoy. 
+
+If you have done a lot of functional programming you probably know more than me. You are the smartest person in the world and there is no need to prove it for the next hour.s
+
+Why am I interested in FP
+    * Frustration with other paradigms
+    * Point of diminishing returns with OO
+    * Intellectual curiosity - understand before discounting
+
+The paper
+    * 'Why functional programming matters' by John Hughes
+    * published 1990
+    * http://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf
+
+
+Programming Paradigms
+---------------------
+
+Imperitive programming - Tell the computer what to do programming
+    benefits: this is how computers actually work. Least abstraction. Assembler.
+
+Show tree with Procedural under imperitive
+
+Procedural programming - Procedural programming is imperative programming in which the program is built from one or more procedures (also known as subroutines or functions)
+    COBOL
+    .NET 1 (Datasets etc)
+
+Show tree with Procedural and object-oriented under imperitive
+
+Object-oriented programming
+    benefits: easy to model the problem. The world is object-oriented. Discuss.
+
+Declarative programming - Declare how it is programming. The program is essentially a definition of itself. 
+    Ex. converting nested ifs to a dictionary.
+    Express the logic of the computation without specifying its control flow. 
+    eg. Sql, xslt, regular expressions
+
+Show tree with Declarative and Functioal programming beneath
+
+Functional programming - Programming paradigm where the fundamental operation is the application of functions to arguments
+    .
+
+What is a function? Describe mathematical notion of a function. Functional programs often read like mathematical proofs. They express what things are, not how to do things. 
+
+
+Benefits of FP
+----------------
+
+### Referential Transparency
+
+Defn:  expressions and their value are interchangeable
+
+    increment x = x + 1
+    x = 2 + 3
+    increment (2 + 3) = (2 + 3) + 1
+
+The order of execution is irrelevant. This makes it impossible to have a bug due to temporal coupling - a bug that occurs because things have to occur in a specific order but they don't. Also advantages for parallelism.
+
+Consider property injection. Ex of temporarl coupling due to lack of referential transparency. 
+
+Pure Functions
+----------------
+
+Concept related to referential transparency. 
+
+Given certain inputs the result is always the same. The function has no observable effect other than returning a value.
+
+The ideal functional program does absolutely nothing. Has no side effects. But no side effects is impossible. Minimum side effect is increasing the temperature in the data centre just a little bit. 
+
+Standard Temperature and Pressure
+
+speed of sound 
+    at sea level? -340.29 m / s
+    at 40km - 317 m / s
+    in vacuum? (0)
+
+The speed of sound is ambiguous. To avoid this, scientists define a controlled environment for performing repeatable experiments - known as standard temperature and pressure.
+
+273.15 K (0c) 100kPa
+
+Scientists define STP for repeatable experiments. Programmers define pure functions to perform repeatable function calls. Its about being able to trust function calls. 
+
+Consider a web application that stores data in a session. If there is a function that references that session, then calling that function is like asking the speed of sound. Its ambiguous. It changes (or could) with the content of the session. 
+
+Function Composition
+---------------------
+
+Pure functions give us faith that the function will always behave the same way. Function composition = making large trustworthy functions by combining small trustworthy functions.
+
+### Streaming
+
+Unix derives much of its usefulness from piping together text processing programs. 
+
+ps aux | grep "ghci"
+
+Mcilroy v Knuth
+
+http://www.leancrew.com/all-this/2011/12/more-shell-less-egg/
+
+1986
+Communications of the ACM
+Knuth wrote program (>10 pages Pascal), McIlroy critique
+Analyse text, produce sorted list of word frequency
+McIlroy -> 6 line shell script
+
+New hotness in node.js is streams. 
+
+Show graphical representation of readable, writeable and readwrite streams
+
+// file streaming
+http.createServer(function(request, response) {
+    var readableStream = fs.createReadStream('README.md');
+    readableStream.pipe(response);
+});
+
+
+
+Lazy functional programs have this natively.
+
+(g . f) input 
+= g (f input)
+
+Haskell function for calculating primes. Equivalent c# program. Calculate the primes < 1000000
+
+// http://stackoverflow.com/a/3285574
+boolean isPrime(int number) {
+
+    if (number == 1) return false;
+    if (number == 2) return true;
+
+    for (int i = 2; i < number; ++i)  { // TODO: only test up to sqrt number
+       if (number % i = 0) return false;
+    }
+
+    return true;
+
+}
+
+but what if g has two arguments? Add some curry. 
+
+
+Higher order functions
+----------------------
+
+Define.
+Then example.
+    Sum list in C# or js
+
+    Custom sum list in Haskell
+
+    Higher order version using (+) and foldr ie sum = foldr (+) 0
+    C# version (Aggregate?) NB: + is not a function in C# so we have to define an add function
+    Ruby version using reduce and blocks 
+    JavaScript example with Array.reduce
+
+
+Being Funcional in an Imperative Environment
+--------------------------------------------
+
+linq
+
+1st class functions
+html tags
+
+tagbuilder 
+
+var builder = new TagBuilder("h1");
+builder.InnerHTML = "My Heading";
+var tag = builder.ToString();
+
+// with 1st class functions
+var tag = TagBuilder.Create("h1", tag => tag.InnerHTML = "My Heading");
+
+
+local functions
+
+static classes with static functions
+
+pure functions
+

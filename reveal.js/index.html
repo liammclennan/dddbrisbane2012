@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<img src="../title.png" alt="">
+				</section>
+
+				<section>
+                    <h2>I don't know what I am doing</h2>
+                    <p>
+                        <img src="../andy.jpg" />
+                    </p>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>The path to functional programming</h2>
+                        <p class="">
+                            <img src="../mordorpath.jpg" />
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Frustration</h2>
+                        <p class="">
+                            <img src="../frustration.jpg"/>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Intellectual curiosity</h2>
+                        <p class="">
+                            <img src="../intellectualcuriosity.jpg" />
+                        </p>
+                    </section>
+                    <section>
+                        <p class="">
+    						<img src="../mordor.jpg" width="750" height="312" />
+    					</p>
+    				</section>
+                </section>
+                
+                <section>
+                    <h1>Why Functional Programming Matters</h1>
+                    <p>
+                        by John Hughes (1990)                        
+                    </p>
+                    <p><img src="../hughes.jpg" /></p>
+                    <p><br/>http://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf</p>
+                </section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h1>Programming Paradigms</h1>
+                        <ul>
+                            <li class="fragment">Imperative</li>
+                            <li class="fragment">Procedural</li>
+                            <li class="fragment">Object-oriented</li>
+                            <li class="fragment">Declarative</li>
+                            <li class="fragment">Functional</li>
+                        </ul>
+					</section>
+					<section>
+						<h2>Imperative</h2>
+						<blockquote>tell the computer what to do programming</blockquote>
+					</section>
+					<section>
+						<h2>Procedural</h2>
+						<p>Cobol, .net 1.1</p>
+						<p><img src="../procedural.png" /></p>
+					</section>
+					<section>
+                        <h2>Object-oriented</h2>
+                        <p>model the domain: subjects and actions</p>
+                        <p><img src="../oo.png" /></p>
+                    </section>
+                    <section>
+                        <h2>Declarative</h2>
+                        <blockquote>tell the computer how it is</blockquote>
+                        <p><img src="../declarative.png" /></p>
+                    </section>
+                    <section>
+                        <h2>Functional</h2>
+                        <blockquote>Programming paradigm where the fundamental operation is the application of functions to arguments</blockquote>
+                        <p><img src="../tree.png" /></p>
+                    </section>
+                    <section>
+						<h2>Functional</h2>
+                        <blockquote>a complete functional program is just a function from its input to its output</blockquote>John Hughes
+						<p><img src="../Function_machine2.svg" /></p>
+                    </section>
+                    <section>
+                        <h2>f (x) = 2x</h2>
+                        <ul>
+                            <li class="fragment">Expresses relationship between the function input and the output</li>
+                            <li class="fragment">Is declarative</li>
+                        </ul>
+                    </section>
+				</section>
+
+                <section>
+    				<section>
+    					<h2>Benefits of Functional Programming</h2>
+                        <p><img src="../koolaid.gif" /></p>
+    					<ul>
+                            <li>Referential transparency</li>
+                            <li>Pure functions</li>
+                            <li>Function composition</li>
+                            <li>Higher order functions</li>
+                            <li>Laziness</li>
+                        </ul>
+    				</section>
+                    <section>
+                        <h2>Referential transparency</h2>
+                        <p>expressions and their value are interchangeable</p>
+<pre class="fragment"><code contenteditable>
+f (x) = x + 1
+</code></pre>
+<pre class="fragment"><code contenteditable>
+x = 2 + 3
+</code></pre>
+<pre class="fragment"><code contenteditable>
+f (2 + 3) = (2 + 3) + 1
+= 6
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Pure functions</h2>
+                        <ul>
+                            <li class="fragment">for a given input the result is always the same</li>
+                            <li class="fragment">there are no observable side-effects</li>
+                            <li class="fragment">makes it easier to reason about the correctness of code</li>
+                            <li class="fragment">enables automatic compiler optimisations and parallelism</li>
+                        </ul>
+                        <p class="fragment"><img src="../thumbs.jpg" alt=""></p>
+                    </section>
+                     <section>
+                        <h2>If you don't know...</h2>
+                        <h2 class="fragment">
+                            I'm not going to tell you
+                            <img src="../angry.jpg" alt="">
+                        </h2>
+
+                    </section>
+                    <section>
+                        <h2>the perfect functional program</h2>
+                        <p class="fragment">... 'does' nothing</p>
+                    </section>
+                    <section>
+                        <h2>What is the speed of sound?</h2>
+                        <ul>
+                            <li>at sea level?</li>
+                            <li class="fragment">at 40,000m?</li>
+                            <li class="fragment">in a vacuum?</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Standard Temperature and Pressure</h2>
+                        <p class="fragment">273.15 K (0c) 100kPa</p>
+                        <p class="fragment">makes experiments repeatable</p>
+                    </section>
+                    <section>
+                        <h2>It's about trust</h2>
+                        <p><img src="../itsabouttrus.jpg"></p>
+                    </section>
+                    <section>
+                        <h1>Function Composition</h1>
+                        <p>Combine many trustworthy pure functions into larger trustworthy pure functions</p>
+<pre class="fragment"><code contenteditable>
+function f(a) { ... }
+
+function g(b) { ... }
+
+function fgComposed(a) {
+    return g(f(a));
+}
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Combining unix shell programs</h2>
+                        <blockquote>This is the Unix philosophy: Write programs that do one thing and do it well. Write programs to work together. <span style="text-decoration: line-through;">Write programs to handle text streams, because that is a universal interface.</span></blockquote>
+                        <p>Doug McIlroy, Bell Labs</p>
+<pre class="fragment"><code contenteditable>
+    find . | wc -l
+</code></pre>
+<pre class="fragment"><code contenteditable>
+    find . | grep .js
+</code></pre>
+<pre class="fragment"><code contenteditable>
+    find . | grep .js | wc -l
+</code></pre>
+                    </section>
+                    <section>
+                        <p>
+                            <img src="../mcilroy.jpg" alt="" height="405"> 
+                            <img src="../knuth.jpg" alt="" height="405">    
+                        </p>
+                        <h2>Douglas McIlroy Vs. Donald Knuth</h2>
+<pre class="fragment"><code contenteditable>
+1:  tr -cs A-Za-z '\n' |
+2:  tr A-Z a-z |
+3:  sort |
+4:  uniq -c |
+5:  sort -rn |
+6:  sed ${1}q
+</code></pre>
+                        </section>
+                        <section>
+                            <h1>Node.js Streams</h1>
+<pre class="fragment"><code contenteditable>
+// file streaming
+http.createServer(function(request, response) {
+    var readableStream = fs.createReadStream('README.md');
+    readableStream.pipe(response);
+});
+</code></pre>
+                        </section>
+                        <section>
+                            <h2>Haskell Function Composition</h2>
+<pre class="fragment"><code contenteditable>
+    wc (find x)
+</code></pre>
+<pre class="fragment"><code contenteditable>
+    = wc $ find x
+</code></pre>
+<pre class="fragment"><code contenteditable>
+    = (wc . find) x
+</code></pre>
+                        </section>
+                        <section>
+                            <h2>Higher-order functions</h2>
+                            <blockquote>Take a function as an input or outputs a function</blockquote>
+<pre class="fragment"><code contenteditable>
+    @Html.EditorFor(c => c.PropertyName)
+</code></pre>
+<pre class="fragment"><code contenteditable>
+    function createAdder(increment) {
+        return function (input) {
+            return increment + input;
+        };
+    }
+</code></pre>
+<p class="fragment"><a href="http://jsfiddle.net/89jQB/">Demo</a></p>
+                        </section>
+
+
+
+
+
+                    <section>
+                        <h1>Laziness</h1>
+<pre class="fragment"><code contenteditable>
+    someCondition && calcPiToBillionPlaces()
+</code></pre>
+<pre class="fragment"><code contenteditable>
+    false && calcPiToBillionPlaces()
+</code></pre>
+<p class="fragment">Lazy wins!</p>
+                </section>
+                <section>
+                    <h1>yield</h1>
+                    <p class="fragment">yield_lazy.linq</p>
+                </section>
+                <section>
+                    <h1>IQueryable</h1>
+                </section>
+                <section>
+                    <h2>Lazy functional languages</h2>
+                    <p>Some languages are lazy by default</p>
+<pre class="fragment"><code contenteditable>
+    take 10 [1..1000000000000000000000000000000000000000000000000]
+</code></pre>
+<pre class="fragment"><code contenteditable>
+    [1,2,3,4,5,6,7,8,9,10]
+</code></pre>
+<pre class="fragment"><code contenteditable>
+    g (f input)  
+</code></pre>
+<blockquote class="fragment">Recall that a complete functional program is
+just a function from its input to its output</blockquote>
+<p class="fragment">Safe in functional languages because sequence is not important</p>
+                </section>
+
+
+
+
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Things that I don't like in class-oriented languages</h1>
+                        <img src="../campbells.jpg" alt="">
+                    </section>
+                    <section>
+                        <h2>Creating a class to hold a function</h2>
+                        <p>Class-oriented languages don't allow functions to be declared without a class</p>
+<pre class="fragment"><code contenteditable>
+public class Calculator
+{
+    public int Add(int first, int second) {
+        return first + second;
+    }
+}
+
+var myCalculator = new Calculator();
+myCalculator.Add(1,2);
+// => 3
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Functions that are too visible</h2>
+<pre class="fragment"><code contenteditable>
+public int CountJsFiles() {
+    return GetLines().Where(EndsWithJs).Aggregate(0, Step);
+}
+private IEnumerable<string> GetLines() {
+        return new [] {"one.js", "two.js", "README.txt" };
+}
+private bool EndsWithJs(string line) {
+    return line.EndsWith(".js");
+}
+private int Step(int memo, string item) {
+    return memo += 1;
+}
+</code></pre>
+                    </section>
+
+
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Functional in an imperative world</h1>
+                        <img src="../place.jpeg" height="400" alt="">
+                    </section>
+                    <section>
+                        <h1>LINQ</h1>
+                        <p>a set of higher order functions that compose pure functions</p>
+<pre class="fragment"><code contenteditable>
+    Find(".")                                       // find .
+        .Where(line => line.EndsWith(".js"))        // grep .js
+        .Aggregate(0, (memo,item) => memo += 1)     // wc -l
+</code></pre>
+<p class="fragment">linq.linq</p>
+                    </section>
+                    <section>
+                        <h1>TagBuilder</h1>
+<pre class="fragment"><code contenteditable>
+// imperative
+var builder = new TagBuilder("h1");
+builder.InnerHTML = "My Heading";
+var tag = builder.ToString();
+</code></pre>
+<pre class="fragment"><code contenteditable>
+// functional 
+var tag = TagBuilder.Create("h1", 
+            tag => tag.InnerHTML = "My Heading");
+</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Local functions</h2>
+                        <p class="fragment">
+                            separate_functions.linq
+                        </p>
+<pre class="fragment"><code contenteditable>
+private int CountJsFiles() {
+    Func< string,bool > EndsWithJs = (line)=>line.EndsWith(".js");
+    Func< int, string, int > Step = (memo, item)=> memo += 1;
+    Func< IEnumerable< string > > GetLines = ()=>new [] {"one.js", "two.js", "README.txt"};
+    
+    return GetLines().Where(EndsWithJs).Aggregate(0, Step);
+}
+</code></pre>
+<p class="fragment">local_functions.linq</p>
+                    </section>
+                    <section>
+                        <h2>Pure functions</h2>
+                        <p>Work just fine</p>
+<pre class="fragment"><code contenteditable>
+public int Add(int one, int two) {
+    return one + two;
+}
+</code></pre>
+                    </section>
+                    <section>
+                        <img src="../zoidberg.jpg"  width="500" alt="">
+                        <p>Static functions on static classes</p>
+<pre><code contenteditable>
+public static class Calculate {
+    public static int Add(int one, int two) {
+        return one + two;
+    }
+}
+</code></pre>
+                    </section>
+                </section>
+
+                <section>
+                   <section>
+                       <h1>Nice things</h1>
+                       <img src="../learn.png" width="450" alt="">
+                   </section>
+                   <section>
+                       <img src="../learn2.png" alt="">
+                   </section>
+                   <section><img src="../realworldhaskell.jpg" alt=""></section>
+               </section>               
+
+
+				
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
