@@ -18,5 +18,5 @@ private bool EndsWithJs(string line) {
 }
 
 private int Step(int memo, string item) {
-	return memo += 1;
+	return memo + 1;
 }

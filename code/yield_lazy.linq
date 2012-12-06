@@ -13,6 +13,3 @@ private IEnumerable<int> Numbers() {
 	}
 
 }
-
-
-// Define other methods and classes here
